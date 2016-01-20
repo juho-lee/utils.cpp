@@ -26,6 +26,3 @@ inline void mysprintf(char *buff, const char *fmt, ...)
     va_end(arg);
 #endif
 }
-
-#include "math.h"
-#include "random.h"

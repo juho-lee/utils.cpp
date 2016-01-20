@@ -20,5 +20,13 @@
 // http://research.microsoft.com/en-us/um/people/minka/software/lightspeed/
 double LogGamma(double x);
 
+// first derivative of log(Gamma(x))
+// copied from https://github.com/Blei-Lab/lda-c/
+double DiGamma(double x);
+
+// second derivative of log(Gamma(x))
+// copied from https://github.com/Blei-Lab/lda-c/
+double TriGamma(double x);
+
 // log(exp(a) + exp(b))
 double LogSumExp(double a, double b);
