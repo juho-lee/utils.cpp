@@ -18,11 +18,12 @@
 #include <cstdarg>
 inline void mysprintf(char *buff, const char *fmt, ...)
 {
-#ifdef _WIN32
-#else
-    std::va_list arg;
+    va_list arg;
     va_start(arg, fmt);
-    std::vsnprintf(buff, BUFFSIZE, fmt, arg);
-    va_end(arg);
+#ifdef _WIN32
+    vsprintf_s(buff, BUFFSIZE, fmt, arg);
+#else
+    vsnprintf(buff, BUFFSIZE, fmt, arg);
 #endif
+    va_end(arg);
 }
